@@ -12,7 +12,7 @@ Project 1
 9. Create Ubuntu Server and install/enable apache2
 
 Project 2
-Basic web application
+Basic web application  
 Resources to create:
 1. Multiple EC2
 2. Elastic Load Balancer
