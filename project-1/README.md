@@ -13,3 +13,12 @@ provider "aws" {
   region = "us-east-1
 }
 ```
+
+commands
+
+```
+terraform init  
+terraform plan  
+terrform apply  
+terraform destroy
+```
