@@ -11,8 +11,7 @@ Project 1
 8. Assign an elastic IP to the network interface created in step 7
 9. Create Ubuntu Server and install/enable apache2
 
-Project 2
-Basic web application  
+Project 2: Basic web application  
 Resources to create:
 1. Multiple EC2
 2. Elastic Load Balancer

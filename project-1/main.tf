@@ -130,18 +130,18 @@ resource "aws_instance" "ec2-1" {
   }
 
   # Install and enable apache2 using user_date
-  user_data = <<-EOF
+  /* user_data = <<-EOF
               #!/bin/bash
               sudo apt update -y
               sudo apt install apache2 -y
               sudo systemctl start apache2
               sudo bash -c 'echo your web server is up ! > /var/www/html/index.html'
               sudo systemctl enable apache2
-              EOF
+              EOF */
 
 
   # Install and enable apache2 remote provisioner
-  /* connection {
+  connection {
     type        = "ssh"
     user        = "ubuntu"
     private_key = file("./devops-foko.pem")
@@ -155,10 +155,21 @@ resource "aws_instance" "ec2-1" {
       "sudo ufw allow 'Apache'",
       "sudo systemctl enable apache2"
     ]
-  } */
+  }
 
   tags = {
     Name = "ec2-project-1"
   }
 }
 
+output "server_public_ip" {
+  value = aws_eip.eip-1.public_ip
+}
+
+output "server_private_ip" {
+  value = aws_instance.ec2-1.private_ip
+}
+
+output "server_id" {
+  value = aws_eip.eip-1.id
+}
